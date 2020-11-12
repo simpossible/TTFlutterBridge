@@ -49,7 +49,7 @@
                 if (async) {
                     firstPart = [firstPart substringFromIndex:9];//记录真正的dart_key值
                 }else {
-                    firstPart = [firstPart substringFromIndex:9];//记录真正的dart_key值
+                    firstPart = [firstPart substringFromIndex:4];//记录真正的dart_key值
                 }
                 firstPart = [firstPart lowercaseString];
                 
