@@ -9,4 +9,8 @@ TTFlutterBridge 方便OC更好的与flutter进行通信。基于现有的flutter
 
 * 创建组件类继承自 TTFlutterPlugin
     ```
-
+        #import <TTFlutterBridge/TTFlutterPlugin.h>
+        @interface TestPlugin : TTFlutterPlugin
+        @end
+        
+    ```
