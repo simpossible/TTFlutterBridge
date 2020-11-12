@@ -7,6 +7,29 @@ TTFlutterBridge 方便OC更好的与flutter进行通信。基于现有的flutter
 
 #### 具体使用
 
+
+##### dart 实现
+* 创建Dart接口
+    ```
+        import 'dart:async';
+        import 'package:flutter/services.dart';
+
+        class TTTest {
+          static const MethodChannel _channel =
+          const MethodChannel('tttest');
+
+         static Future<String> lowercaseString(String orgstring) async {
+           String str = await _channel.invokeMethod('lowercaseString',[orgstring]);
+           return str;
+         }
+
+         static Future<String> capitalizedString(String orgstring) async {
+          String str = await _channel.invokeMethod('capitalizedString',[orgstring]);
+           return str;
+         }
+        }
+    ```
+##### OC 实现
 * 创建组件类继承自 TTFlutterPlugin
     ```
         #import <TTFlutterBridge/TTFlutterPlugin.h>
@@ -37,4 +60,15 @@ TTFlutterBridge 方便OC更好的与flutter进行通信。基于现有的flutter
         - (NSString *)dartLowercaseString:(NSString *)str {
             return [str lowercaseString];
         }
+    ```
+    
+* 注册所有插件
+    ```
+        @implementation GeneratedPluginRegistrant
+
+        + (void)registerWithRegistry:(NSObject<FlutterPluginRegistry>*)registry {
+            [TTFlutterPlugin registAllWithRegistry:registry];
+        }
+
+        @end
     ```
