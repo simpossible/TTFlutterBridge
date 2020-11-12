@@ -12,5 +12,29 @@ TTFlutterBridge 方便OC更好的与flutter进行通信。基于现有的flutter
         #import <TTFlutterBridge/TTFlutterPlugin.h>
         @interface TestPlugin : TTFlutterPlugin
         @end
-        
+    ```
+* 指定methodName
+    ```
+        @implementation TestPlugin
+
+        + (NSString *)flutterMethodName {
+            return @"tttest";
+        }
+
+        + (NSString *)pluginKey {
+          return @"TestPlugin";
+        }
+        @end
+    ```
+* 实现dart接口 - 以dart开头的方法 如dartXXX 将默认为同步接口 以dartAsync开头的方法默认为异步接口，result回调由自己控制
+    ```
+        - (void)dartAsyncCapitalizedString:(FlutterResult)result string:(NSString *)str {
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+              result([str capitalizedString]);
+          });
+        }
+
+        - (NSString *)dartLowercaseString:(NSString *)str {
+            return [str lowercaseString];
+        }
     ```
