@@ -1,0 +1,6 @@
+framework module TTFlutterBridge {
+umbrella header "TTFlutterBridge.h"
+
+export *
+module * { export * }
+}

@@ -1,0 +1,16 @@
+PODS:
+  - Flutter (0.0.3)
+
+DEPENDENCIES:
+  - Flutter
+
+SPEC REPOS:
+  "git@gitlab.ttyuyin.com:cocoapods/repo.git":
+    - Flutter
+
+SPEC CHECKSUMS:
+  Flutter: 5a8185463e271f7bd105e05b07713b85e9aa8abb
+
+PODFILE CHECKSUM: 3105eac4769f704e88fba2d2120c96ba4f399ae2
+
+COCOAPODS: 1.9.3
