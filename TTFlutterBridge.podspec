@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "TTFlutterBridge"
-  s.version      = "0.0.5"
+  s.version      = "0.0.6"
   s.summary      = "TTFlutterBridge"
 
   # This description is used to generate tags and improve search results.
@@ -80,7 +80,7 @@ Pod::Spec.new do |s|
   #  Supports git, hg, bzr, svn and HTTP.
   #
 
-  s.source       = { :git => "git@gitlab.ttyuyin.com:flutter/ttflutterbridge.git", :tag => "#{s.version}" }
+  s.source       = { :git => "git@gitlab.ttyuyin.com:cocoapods/TTFlutterBridge.git", :tag => "#{s.version}" }
 
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
