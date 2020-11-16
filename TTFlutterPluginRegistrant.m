@@ -5,6 +5,7 @@
 #import "GeneratedPluginRegistrant.h"
 #import <TTFlutterBridge/TTFlutterPlugin.h>
 
+#import <objc/message.h>
 
 @implementation GeneratedPluginRegistrant(TT)
 
@@ -17,7 +18,7 @@
 
 + (void)ttRegisterWithRegistry:(NSObject<FlutterPluginRegistry>*)registry {
     [TTFlutterPlugin registAllWithRegistry:registry];
-    [self.ttRegisterWithRegistry:registry];
+    [self ttRegisterWithRegistry:registry];
 }
 
 

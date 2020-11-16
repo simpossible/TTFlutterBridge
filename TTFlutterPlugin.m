@@ -8,6 +8,7 @@
 #import "TTFlutterPlugin.h"
 #import "TTFlutterPluginOCBridge.h"
 #import <objc/runtime.h>
+#import "TTFlutterPluginRegistrant.h"
 
 @interface TTFlutterPlugin()
 
