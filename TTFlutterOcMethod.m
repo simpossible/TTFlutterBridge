@@ -30,6 +30,14 @@ NSString * const TTFlutterOcArgTag = @"with";
 
 @end
 
+BOOL TTIsTypeQualifier(char c)
+{
+    if (c == 'r' || c == 'n' || c == 'N' || c == 'o' || c == 'O' || c == 'R' || c == 'V') {
+        return YES;
+    }
+    return NO;
+}
+
 @implementation TTFlutterOcMethod
 
 + (instancetype)initWithSEL:(SEL)selector {
@@ -235,7 +243,7 @@ NSString * const TTFlutterOcArgTag = @"with";
                 NSString *key = _allArgKey[i];//拿到key 这里默认是有值的
                 NSObject *arg = param[key];
                 NSInteger index = i + 3;
-                [invocation setArgument:&arg atIndex:index];
+                [self invoke:invocation arg:arg index:index];
             }else {
                 break;
             }
@@ -346,6 +354,44 @@ NSString * const TTFlutterOcArgTag = @"with";
         NSObject *returnValue = returnArgument;
         result(returnValue);
     }
+}
+
+
+
+- (void)invoke:(NSInvocation *)invocation arg:(id)arg index:(int)index {
+    const char *argumentType = [invocation.methodSignature getArgumentTypeAtIndex:index];
+    switch (TTIsTypeQualifier(argumentType[0]) ? argumentType[1] : argumentType[0]) {
+#define MT_FWD_ARG_CASE(_typeChar, _type, _typeCapitalizedString) \
+case _typeChar: {   \
+NSNumber *number = arg; \
+_type value = [number _typeCapitalizedString##Value]; \
+[invocation setArgument:&value atIndex:index];  \
+break;  \
+}
+            MT_FWD_ARG_CASE('i', int, int)
+            MT_FWD_ARG_CASE('s', short, short)
+            MT_FWD_ARG_CASE('l', long, long)
+            MT_FWD_ARG_CASE('q', long long, longLong)
+            MT_FWD_ARG_CASE('C', unsigned char, unsignedChar)
+            MT_FWD_ARG_CASE('I', unsigned int, unsignedInt)
+            MT_FWD_ARG_CASE('S', unsigned short, unsignedShort)
+            MT_FWD_ARG_CASE('L', unsigned long, unsignedLong)
+            MT_FWD_ARG_CASE('Q', unsigned long long, unsignedLongLong)
+            MT_FWD_ARG_CASE('f', float, float)
+            MT_FWD_ARG_CASE('d', double, double)
+            MT_FWD_ARG_CASE('B', BOOL, bool)
+        case 'c':{
+            NSString *str = arg;
+            const char *c = [str UTF8String];
+            [invocation setArgument:&c atIndex:index];
+            break;
+        }
+
+        default:
+            [invocation setArgument:&arg atIndex:index];
+            break;
+    }
+    
 }
 
 
