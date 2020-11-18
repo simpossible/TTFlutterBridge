@@ -6,7 +6,13 @@
 #define GeneratedPluginRegistrant_TT_h
 
 #import <Flutter/Flutter.h>
+
+
+#if __has_include(<GeneratedPluginRegistrant/GeneratedPluginRegistrant.h>)
 #import <GeneratedPluginRegistrant/GeneratedPluginRegistrant.h>
+#else
+#import "GeneratedPluginRegistrant.h"
+#endif
 
 NS_ASSUME_NONNULL_BEGIN
 
