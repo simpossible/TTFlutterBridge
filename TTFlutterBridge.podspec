@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "TTFlutterBridge"
-  s.version      = "0.0.28"
+  s.version      = "0.0.30"
   s.summary      = "TTFlutterBridge"
 
   # This description is used to generate tags and improve search results.

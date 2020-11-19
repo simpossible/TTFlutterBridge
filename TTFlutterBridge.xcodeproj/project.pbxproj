@@ -19,7 +19,7 @@
 		264946BA255D4D4E0081BFF4 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
-			dstPath = "include/$(PRODUCT_NAME)";
+			dstPath = include;
 			dstSubfolderSpec = 16;
 			files = (
 				264946D4255D4D860081BFF4 /* TTFlutterPlugin.h in CopyFiles */,
@@ -83,7 +83,6 @@
 				F56A12C089670FF355F51103 /* Pods-TTFlutterBridge.debug.xcconfig */,
 				69C3104C13727564B8E45D24 /* Pods-TTFlutterBridge.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
