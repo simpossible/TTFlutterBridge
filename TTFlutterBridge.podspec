@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "TTFlutterBridge"
-  s.version      = "0.0.9"
+  s.version      = "0.0.10"
   s.summary      = "TTFlutterBridge"
 
   # This description is used to generate tags and improve search results.
@@ -138,5 +138,6 @@ Pod::Spec.new do |s|
 
   # s.xcconfig = { "HEADER_SEARCH_PATHS" => "$(SDKROOT)/usr/include/libxml2" }
   s.dependency 'Flutter'
+  s.dependency 'GeneratedPluginRegistrant'
 
 end
