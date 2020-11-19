@@ -3,7 +3,7 @@
 //
 
 #import "GeneratedPluginRegistrant.h"
-#import <TTFlutterBridge/TTFlutterPlugin.h>
+#import "TTFlutterPlugin.h"
 
 #import <objc/message.h>
 

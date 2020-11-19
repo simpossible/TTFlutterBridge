@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		261FAF9A256679A600F7DE8B /* TTFlutterPluginRegistrant.m in Sources */ = {isa = PBXBuildFile; fileRef = 261FAF98256679A600F7DE8B /* TTFlutterPluginRegistrant.m */; };
 		264946D0255D4D790081BFF4 /* TTFlutterOcMethod.m in Sources */ = {isa = PBXBuildFile; fileRef = 264946CA255D4D790081BFF4 /* TTFlutterOcMethod.m */; };
 		264946D1255D4D790081BFF4 /* TTFlutterPluginOCBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = 264946CC255D4D790081BFF4 /* TTFlutterPluginOCBridge.m */; };
 		264946D2255D4D790081BFF4 /* TTFlutterPlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = 264946CD255D4D790081BFF4 /* TTFlutterPlugin.m */; };
@@ -30,6 +31,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		261FAF98256679A600F7DE8B /* TTFlutterPluginRegistrant.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTFlutterPluginRegistrant.m; sourceTree = "<group>"; };
+		261FAF99256679A600F7DE8B /* TTFlutterPluginRegistrant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTFlutterPluginRegistrant.h; sourceTree = "<group>"; };
 		264946BC255D4D4E0081BFF4 /* libTTFlutterBridge.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libTTFlutterBridge.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		264946CA255D4D790081BFF4 /* TTFlutterOcMethod.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTFlutterOcMethod.m; sourceTree = "<group>"; };
 		264946CB255D4D790081BFF4 /* TTFlutterOcMethod.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTFlutterOcMethod.h; sourceTree = "<group>"; };
@@ -61,6 +64,8 @@
 				264946CA255D4D790081BFF4 /* TTFlutterOcMethod.m */,
 				264946CE255D4D790081BFF4 /* TTFlutterPlugin.h */,
 				264946CD255D4D790081BFF4 /* TTFlutterPlugin.m */,
+				261FAF99256679A600F7DE8B /* TTFlutterPluginRegistrant.h */,
+				261FAF98256679A600F7DE8B /* TTFlutterPluginRegistrant.m */,
 				264946CF255D4D790081BFF4 /* TTFlutterPluginOCBridge.h */,
 				264946CC255D4D790081BFF4 /* TTFlutterPluginOCBridge.m */,
 				264946BD255D4D4E0081BFF4 /* Products */,
@@ -178,6 +183,7 @@
 			files = (
 				264946D1255D4D790081BFF4 /* TTFlutterPluginOCBridge.m in Sources */,
 				264946D2255D4D790081BFF4 /* TTFlutterPlugin.m in Sources */,
+				261FAF9A256679A600F7DE8B /* TTFlutterPluginRegistrant.m in Sources */,
 				264946D0255D4D790081BFF4 /* TTFlutterOcMethod.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
