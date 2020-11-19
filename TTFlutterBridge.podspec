@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "TTFlutterBridge"
-  s.version      = "0.0.38"
+  s.version      = "0.0.39"
   s.summary      = "TTFlutterBridge"
 
   # This description is used to generate tags and improve search results.
@@ -94,7 +94,6 @@ Pod::Spec.new do |s|
 
 
   s.default_subspec = 'framework'  
-  s.static_framework = true
 
   s.subspec 'framework' do |ss|
   ss.vendored_frameworks = "framework/*.framework"
