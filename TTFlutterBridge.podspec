@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "TTFlutterBridge"
-  s.version      = "0.0.10"
+  s.version      = "0.0.11"
   s.summary      = "TTFlutterBridge"
 
   # This description is used to generate tags and improve search results.
@@ -91,10 +91,21 @@ Pod::Spec.new do |s|
   #  Not including the public_header_files will make all headers public.
   #
 
+
+
+  s.default_subspec = 'framework'  
+  s.static_framework = true
+
+  s.subspec 'framework' do |ss|
+      ss.vendored_frameworks = "framework/*.framework"
+  end
+
+   # s.subspec 'dev' do |ss|
   s.source_files  = "**/*.{h,m}"
   # s.exclude_files = "framework/","Pod/"
 
   s.public_header_files = "**/*.{h}"
+  # end
 
 
   # ――― Resources ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
