@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		261FAF9A256679A600F7DE8B /* TTFlutterPluginRegistrant.m in Sources */ = {isa = PBXBuildFile; fileRef = 261FAF98256679A600F7DE8B /* TTFlutterPluginRegistrant.m */; };
+		261FAF9C25667D6A00F7DE8B /* TTFlutterPluginRegistrant.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 261FAF99256679A600F7DE8B /* TTFlutterPluginRegistrant.h */; };
 		264946D0255D4D790081BFF4 /* TTFlutterOcMethod.m in Sources */ = {isa = PBXBuildFile; fileRef = 264946CA255D4D790081BFF4 /* TTFlutterOcMethod.m */; };
 		264946D1255D4D790081BFF4 /* TTFlutterPluginOCBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = 264946CC255D4D790081BFF4 /* TTFlutterPluginOCBridge.m */; };
 		264946D2255D4D790081BFF4 /* TTFlutterPlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = 264946CD255D4D790081BFF4 /* TTFlutterPlugin.m */; };
@@ -23,6 +24,7 @@
 			dstPath = include;
 			dstSubfolderSpec = 16;
 			files = (
+				261FAF9C25667D6A00F7DE8B /* TTFlutterPluginRegistrant.h in CopyFiles */,
 				264946D4255D4D860081BFF4 /* TTFlutterPlugin.h in CopyFiles */,
 				264946D5255D4D860081BFF4 /* TTFlutterPluginOCBridge.h in CopyFiles */,
 			);
