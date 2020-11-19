@@ -2,8 +2,8 @@
 //  Generated file. Do not edit.
 //
 
-#ifndef GeneratedPluginRegistrant_TT_h
-#define GeneratedPluginRegistrant_TT_h
+#ifndef TTGeneratedPluginRegistrant_TT_h
+#define TTGeneratedPluginRegistrant_TT_h
 
 #import <Flutter/Flutter.h>
 

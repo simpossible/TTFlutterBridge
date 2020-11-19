@@ -9,4 +9,3 @@ target 'TTFlutterBridge' do
   # Pods for TTFlutterBridge
 
 end
-FlutterPluginRegistrant
