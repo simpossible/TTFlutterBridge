@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "TTFlutterBridge"
-  s.version      = "0.0.11"
+  s.version      = "0.0.12"
   s.summary      = "TTFlutterBridge"
 
   # This description is used to generate tags and improve search results.
@@ -101,10 +101,10 @@ Pod::Spec.new do |s|
   end
 
    # s.subspec 'dev' do |ss|
-  s.source_files  = "**/*.{h,m}"
+ # s.source_files  = "**/*.{h,m}"
   # s.exclude_files = "framework/","Pod/"
 
-  s.public_header_files = "**/*.{h}"
+  #s.public_header_files = "**/*.{h}"
   # end
 
 
