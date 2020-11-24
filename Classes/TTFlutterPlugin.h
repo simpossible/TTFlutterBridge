@@ -13,7 +13,12 @@ NS_ASSUME_NONNULL_BEGIN
 /// TT的Flutter插件的公共类 继承直接使用
 @interface TTFlutterPlugin : NSObject<FlutterPlugin>
 
+@property (nonatomic, strong, readonly) NSObject<FlutterPluginRegistrar>* registrar;
+
 + (void)registAllWithRegistry:(NSObject<FlutterPluginRegistry>*)registry;
+
+/**初始化完成*/
+- (void)oninitialOK;
 
 @end
 

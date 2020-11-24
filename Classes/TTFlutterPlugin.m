@@ -14,9 +14,24 @@
 
 @property (nonatomic, strong) TTFlutterPluginOCBridge * objcBridge;
 
+@property (nonatomic, strong) NSObject<FlutterPluginRegistrar>* registrar;
+
 @end
 
 @implementation TTFlutterPlugin
+
+- (instancetype)initWithRegistrar:(NSObject<FlutterPluginRegistrar>*)registrar {
+    if (self = [super init]) {
+        self.registrar = registrar;
+        self.objcBridge = [TTFlutterPluginOCBridge bridgeWithObject:self];
+    }
+    return self;;
+}
+
+/**初始化完成*/
+- (void)oninitialOK {
+    
+}
 
 + (NSString *)flutterMethodName {
     return @"";
@@ -26,8 +41,8 @@
     return @"";
 }
 
-+ (instancetype)getAPluginInstance {
-    return [[self alloc] init];
++ (instancetype)getAPluginInstanceWithRegistrar:(NSObject<FlutterPluginRegistrar>*)registrar {
+    return [[self alloc] initWithRegistrar:registrar];
 }
 
 - (instancetype)init {
@@ -42,8 +57,9 @@
     FlutterMethodChannel* channel = [FlutterMethodChannel
                                      methodChannelWithName:[self flutterMethodName]
                                      binaryMessenger:[registrar messenger]];
-    TTFlutterPlugin* instance = [self getAPluginInstance];
+    TTFlutterPlugin* instance = [self getAPluginInstanceWithRegistrar:registrar];
     [registrar addMethodCallDelegate:instance channel:channel];
+    [instance oninitialOK];
 }
 
 - (void)handleMethodCall:(FlutterMethodCall*)call result:(FlutterResult)result {
@@ -66,7 +82,6 @@
         for (int i = 0; i < numClasses; i++) {
             Class currentCls = classes[i];
             if (class_getSuperclass(currentCls) == class){
-                
                 [currentCls registerWithRegistrar:[registry registrarForPlugin:[currentCls pluginKey]]];
             }
         }

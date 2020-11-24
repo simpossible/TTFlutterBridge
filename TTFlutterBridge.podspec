@@ -93,18 +93,19 @@ Pod::Spec.new do |s|
 
 
 
-  s.default_subspec = 'framework'  
+  s.default_subspec = 'dev'  
 
-  s.subspec 'framework' do |ss|
-  ss.vendored_frameworks = "framework/*.framework"
-  end
-
-   # s.subspec 'dev' do |ss|
- # s.source_files  = "**/*.{h,m}"
- #  s.exclude_files = "framework/**/*.{h}"
-
- #  s.public_header_files = "**/*.{h}"
+  # s.subspec 'framework' do |ss|
+  #   ss.vendored_frameworks = "framework/*.framework"
   # end
+
+   s.subspec 'dev' do |ss|
+     ss.source_files  = "Classes/**/*.{h,m}"
+    ss.exclude_files = "framework/**/*.{h}"
+    ss.exclude_files = "Pods/**/*.{h,m}"
+
+    ss.public_header_files = "**/*.{h}"
+  end
 
 
   # ――― Resources ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #

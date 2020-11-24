@@ -2,7 +2,20 @@
 //  Generated file. Do not edit.
 //
 
+#if __has_include(<FlutterPluginRegistrant/GeneratedPluginRegistrant.h>)
+#import <FlutterPluginRegistrant/GeneratedPluginRegistrant.h>
+#else
+#if __has_include(<GeneratedPluginRegistrant.h>)
+#import <GeneratedPluginRegistrant.h>
+#else
 #import "GeneratedPluginRegistrant.h"
+#endif
+#endif
+
+@interface GeneratedPluginRegistrant(TT)
+
+@end
+
 #import "TTFlutterPlugin.h"
 
 #import <objc/message.h>
