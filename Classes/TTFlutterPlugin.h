@@ -15,6 +15,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, strong, readonly) NSObject<FlutterPluginRegistrar>* registrar;
 
+@property (nonatomic, strong, readonly) FlutterMethodChannel * channel;
+
 + (void)registAllWithRegistry:(NSObject<FlutterPluginRegistry>*)registry;
 
 /**初始化完成*/

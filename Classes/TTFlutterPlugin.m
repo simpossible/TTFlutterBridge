@@ -16,6 +16,8 @@
 
 @property (nonatomic, strong) NSObject<FlutterPluginRegistrar>* registrar;
 
+@property (nonatomic, strong) FlutterMethodChannel * channel;
+
 @end
 
 @implementation TTFlutterPlugin
@@ -58,6 +60,7 @@
                                      methodChannelWithName:[self flutterMethodName]
                                      binaryMessenger:[registrar messenger]];
     TTFlutterPlugin* instance = [self getAPluginInstanceWithRegistrar:registrar];
+    instance.channel = channel;
     [registrar addMethodCallDelegate:instance channel:channel];
     [instance oninitialOK];
 }
