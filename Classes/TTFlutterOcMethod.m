@@ -256,7 +256,7 @@ BOOL TTIsTypeQualifier(char c)
                 NSString *key = _allArgKey[i];//拿到key 这里默认是有值的
                 NSObject *arg = param[key];
                 NSInteger index = i + 2;
-                [invocation setArgument:&arg atIndex:index];
+                [self invoke:invocation arg:arg index:index];
             }else {
                 break;
             }
@@ -292,7 +292,7 @@ BOOL TTIsTypeQualifier(char c)
             if (i < paramCount) {
                 NSObject *arg = param[i];
                 NSInteger index = i + 3;
-                [invocation setArgument:&arg atIndex:index];
+                [self invoke:invocation arg:arg index:index];
             }else {
                 break;
             }
@@ -304,7 +304,7 @@ BOOL TTIsTypeQualifier(char c)
             if (i < paramCount) {
                 NSObject *arg = param[i];
                 NSInteger index = i + 2;
-                [invocation setArgument:&arg atIndex:index];
+                [self invoke:invocation arg:arg index:index];
             }else {
                 break;
             }
