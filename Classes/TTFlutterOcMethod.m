@@ -85,9 +85,6 @@ BOOL TTIsTypeQualifier(char c)
                     NSRange range = [argPrefix rangeOfString:TTFlutterOcArgTag];//找到是否有with 前缀
                     if (range.location != NSNotFound) {
                         argPrefix = [argPrefix substringFromIndex:(range.location + range.length)];//找到真正的前缀
-                        if (argPrefix.length > 0) {
-                            argPrefix = [argPrefix stringByReplacingCharactersInRange:NSMakeRange(0, 1) withString:[[argPrefix substringToIndex:1] lowercaseString]];
-                        }
                         [allArgKeys addObject:argPrefix];
                     }
                 }
@@ -100,9 +97,6 @@ BOOL TTIsTypeQualifier(char c)
                 NSRange range = [argPrefix rangeOfString:withString];//找到是否有with 前缀
                 if (range.location != NSNotFound) {
                     argPrefix = [argPrefix substringFromIndex:(range.location + range.length)];//找到真正的前缀
-                    if (argPrefix.length > 0) {
-                        argPrefix = [argPrefix stringByReplacingCharactersInRange:NSMakeRange(0, 1) withString:[[argPrefix substringToIndex:1] lowercaseString]];
-                    }
                     [allArgKeys addObject:argPrefix];
                 }
             }
@@ -151,9 +145,6 @@ BOOL TTIsTypeQualifier(char c)
                     NSRange range = [argPrefix rangeOfString:TTFlutterOcArgTag];//找到是否有with 前缀
                     if (range.location != NSNotFound) {
                         argPrefix = [argPrefix substringFromIndex:(range.location + range.length)];//找到真正的前缀
-                        if (argPrefix.length > 0) {
-                            argPrefix = [argPrefix stringByReplacingCharactersInRange:NSMakeRange(0, 1) withString:[[argPrefix substringToIndex:1] lowercaseString]];
-                        }
                         [allArgKeys addObject:argPrefix];
                     }else {
                         [allArgKeys addObject:argPrefix];
@@ -164,9 +155,6 @@ BOOL TTIsTypeQualifier(char c)
                 NSRange range = [argPrefix rangeOfString:TTFlutterOcArgTag];//找到是否有with 前缀
                 if (range.location != NSNotFound) {
                     argPrefix = [argPrefix substringFromIndex:(range.location + range.length)];//找到真正的前缀
-                    if (argPrefix.length > 0) {
-                        argPrefix = [argPrefix stringByReplacingCharactersInRange:NSMakeRange(0, 1) withString:[[argPrefix substringToIndex:1] lowercaseString]];
-                    }
                     [allArgKeys addObject:argPrefix];
                 }else {
                     [allArgKeys addObject:argPrefix];
