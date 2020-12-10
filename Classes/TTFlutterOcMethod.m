@@ -74,6 +74,8 @@ BOOL TTIsTypeQualifier(char c)
     NSRange firstPargRange = [firstPart rangeOfString:TTFlutterOcArgFirstTag];
     if (firstPargRange.location != NSNotFound) {
         m.firstPart = [firstPart substringToIndex:firstPargRange.location];
+    }else {
+        m.firstPart = firstPart;
     }
     
     NSMutableArray * allArgKeys = [NSMutableArray array];
@@ -321,7 +323,8 @@ BOOL TTIsTypeQualifier(char c)
 }
 
 
-- (void)excuteOrgMethodWithObj:(NSObject *)obj param:(NSObject *)param call:(FlutterMethodCall*)call result:(FlutterResult)result {
+- (void)excuteOrgMethodWithObj:(NSObject *)obj call:(FlutterMethodCall*)call result:(FlutterResult)result {
+    NSObject * param = call.arguments;
     NSMethodSignature *signature = [[obj class] instanceMethodSignatureForSelector:_selector];
     NSInvocation *invocation = [NSInvocation invocationWithMethodSignature:signature];
     NSUInteger argsCount = signature.numberOfArguments - 2; //本来的参数个数
