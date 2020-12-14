@@ -131,7 +131,7 @@ BOOL TTIsTypeQualifier(char c)
         firstPart = [firstPart substringFromIndex:4];//记录真正的dart_key值
     }
     
-    NSRange firstPargRange = [firstPart rangeOfString:TTFlutterOcArgTag];
+    NSRange firstPargRange = [firstPart rangeOfString:TTFlutterOcArgFirstTag];
     if (firstPargRange.location != NSNotFound) {
         m.firstPart = [firstPart substringToIndex:firstPargRange.location];
     }else {
