@@ -42,6 +42,9 @@ BOOL TTIsTypeQualifier(char c)
 
 + (instancetype)initWithSEL:(SEL)selector {
     NSString *name = NSStringFromSelector(selector);
+    if ([name isEqualToString:@"dartSaveFollowChannelSwitchTypeWithValue:"]) {
+        NSLog(@"");
+    }
     if ([name hasPrefix:@"dart"]) {
         return  [self argsMeghodWithName:name sel:selector];
     }else if ([name hasPrefix:@"_dart"]) {
@@ -154,7 +157,8 @@ BOOL TTIsTypeQualifier(char c)
                 }
             }else {
                 NSString * argPrefix = i == 0 ? firstPart : allCompos[i];
-                NSRange range = [argPrefix rangeOfString:TTFlutterOcArgTag];//找到是否有with 前缀
+                NSString * firstWith = i == 0 ? TTFlutterOcArgFirstTag : TTFlutterOcArgTag;
+                NSRange range = [argPrefix rangeOfString:firstWith];//找到是否有with 前缀
                 if (range.location != NSNotFound) {
                     argPrefix = [argPrefix substringFromIndex:(range.location + range.length)];//找到真正的前缀
                     [allArgKeys addObject:argPrefix];
@@ -217,8 +221,12 @@ BOOL TTIsTypeQualifier(char c)
         if (signature.methodReturnLength) {
             [invocation getReturnValue:&returnArgument];
         }
-        NSObject *returnValue = returnArgument;
-        result(returnValue);
+        if (returnArgument) {
+            NSObject *returnValue = returnArgument;
+            result(returnValue);
+        }else {
+            result(nil);
+        }
     }
 }
 
