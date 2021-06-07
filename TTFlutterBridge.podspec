@@ -80,7 +80,7 @@ Pod::Spec.new do |s|
   #  Supports git, hg, bzr, svn and HTTP.
   #
 
-  s.source       = { :git => "git@gitlab.ttyuyin.com:cocoapods/TTFlutterBridge.git", :tag => "#{s.version}" }
+  s.source       = { :git => "git@github.com:simpossible/TTFlutterBridge.git", :tag => "#{s.version}" }
 
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
