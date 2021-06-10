@@ -28,7 +28,7 @@ Pod::Spec.new do |s|
                     TTFlutterBridge 实现一个dart 和OC的反射
                    DESC
 
-  s.homepage     = "https://gitlab.ttyuyin.com/flutter/ttflutterbridge"
+  s.homepage     = "https://github.com/flutter/ttflutterbridge"
   # s.screenshots  = "www.example.com/screenshots_1.gif", "www.example.com/screenshots_2.gif"
 
 
