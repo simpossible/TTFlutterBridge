@@ -12,6 +12,12 @@
 #endif
 #endif
 
+@protocol TTGeneratedPluginRegistrantProtocol <NSObject>
+
++ (void)registerWithRegistry:(NSObject<FlutterPluginRegistry>*)registry;
+
+@end
+
 @interface GeneratedPluginRegistrant(TT)
 
 @end
